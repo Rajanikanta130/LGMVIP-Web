@@ -1,0 +1,161 @@
+@import "compass/css3"
+
+@import 'https://fonts.googleapis.com/css?family=Hind'
+@import 'https://fonts.googleapis.com/css?family=Quicksand'
+input, button
+   outline: none
+%duration
+   -webkit-transition-duration: 0.4s /* Safari */
+   transition-duration: 0.4s
+
+$lineHeight: 60px
+%listStyle
+   color: #ECF0F1
+   background: #2C3E50
+   float: left
+   line-height: $lineHeight
+   border-bottom: none
+   letter-spacing: 1px
+   font-family: 'Quicksand', sans-serif
+
+html
+   background: linear-gradient(to bottom , #435F7A, #8C2E24)
+   background-attachment: fixed
+   
+#toDoList
+   font-family: 'Quicksand', sans-serif
+   margin: 25px
+   font-size: 300%
+   font-weight: bold
+   text-align: center
+   color: #ECF0F1
+   text-shadow: 0 0 16px #162029  
+   margin-top: 120px
+   
+#canvas
+   box-shadow: 0px 17px 19px #162029 
+   margin: 0 auto
+   width: 400px
+   background: #2C3E50
+   border-radius: 15px 15px 0 0
+
+#listConTop
+   border-radius: 15px 15px 0 0
+   height: $lineHeight + 2px
+   background: #E74C3C    
+   input
+      border-radius: 15px 0 0 0
+      background: #E74C3C
+      color: #ECF0F1
+      width: 73%
+      font-size: 140%
+      border: 0
+      float: left
+      padding-left: 30px
+      display: inline-block
+      height: $lineHeight
+   #addList
+      @extend %duration
+      background: #E74C3C
+      border: 0
+      color: #ECF0F1
+      width: 15%
+      font-size: 140%
+      display: inline
+      line-height: $lineHeight
+      float: left
+      text-shadow: 0px 0px 5px #2C3E50
+      cursor: pointer
+      &:hover 
+         font-size: 170%
+
+::-webkit-input-placeholder
+   color: #F0F4F5
+   text-shadow: 0px 0px 5px #2C3E50
+
+#listCon
+   margin-top: 10px
+   border-bottom: 1px solid #2C3E50
+   position: relative
+   &:after
+      position: absolute
+      width: 400px
+      height: 15px
+      content: ""
+      border-radius: 0 0 15px 15px
+      background: #2C3E50
+   &:before
+      position: absolute
+      z-index: 1
+      height: 15px
+      width: 400px
+      content: ""
+      color: transparent
+      background: #2C3E50 
+      background-image: linear-gradient( 0deg, #2C3E50  20%, #141C24 100% )
+      margin-top: -10px
+   div
+      height: $lineHeight
+      width: 400px
+      #liID  
+         @extend %duration
+         @extend %listStyle
+         height: $lineHeight
+         padding-left: 30px
+         text-align: left
+         font-size: 90%
+         letter-spacing: -0.5px
+         text-shadow: 0 0 15px black 
+         //text-shadow: 0 0 15px black
+         width: 60%
+         &:hover
+            text-shadow: 0 0 10px white
+      #checkID
+         @extend %duration
+         @extend %listStyle
+         cursor: pointer
+         height: $lineHeight
+         text-align: center
+         font-size: 80%
+         width: 14%
+         &:hover
+            text-shadow: 0 0 15px white
+            font-size: 100%
+      #delID
+         @extend %duration
+         @extend %listStyle
+         cursor: pointer
+         height: $lineHeight
+         text-align: center
+         font-size: 80%
+         text-decoration: none !important
+         width: 14%
+         &:hover
+            text-shadow: 0 0 15px white
+            font-size: 100%
+         
+#fadeInID
+   position: relative
+   &:after
+      position: absolute
+      left: 50%
+      top: 80%
+      border-bottom: 1px solid grey
+      transform: translate(-50%,-50%)
+      content: ""
+      width: 350px
+                   
+.del
+   display: none
+   color: white
+.done
+   @extend: %duration
+   text-decoration: line-through
+.undo
+   @extend: %duration
+   text-decoration: none
+      
+   
+
+
+
